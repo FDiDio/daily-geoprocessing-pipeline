@@ -1,0 +1,9 @@
+dagster
+dagster-webserver
+minio
+numpy
+pandas
+geojson
+pyarrow
+shapely
+requests

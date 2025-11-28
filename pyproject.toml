@@ -1,0 +1,20 @@
+[project]
+name = "hydrosat_dagster"
+version = "0.1.0"
+dependencies = [
+    "dagster",
+    "dagster-webserver",
+    "minio",
+    "numpy",
+    "pandas",
+    "geojson",
+    "pyarrow",
+    "shapely"
+]
+
+[tool.dagster]
+module = "dagster_project"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"

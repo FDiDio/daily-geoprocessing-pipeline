@@ -1,0 +1,116 @@
+# Agricultural monitoring configuration
+# Luxembourg region - Agricultural monitoring area
+#
+# This configuration defines:
+# - Bounding box: Area of interest for satellite monitoring
+# - Fields: Individual agricultural parcels to monitor
+#
+# All coordinates in WGS84 (EPSG:4326): [longitude, latitude]
+
+# Bounding box - defines the overall monitoring area
+# Covers Luxembourg and surrounding agricultural regions (~80km x 80km)
+bbox:
+  xmin: 5.735   # Western boundary (longitude)
+  ymin: 49.447  # Southern boundary (latitude)
+  xmax: 6.531   # Eastern boundary (longitude)
+  ymax: 50.182  # Northern boundary (latitude)
+
+# Field definitions
+# Each field represents an agricultural parcel with:
+# - id: Unique identifier
+# - crop_type: Type of crop planted
+# - planting_date: Date when crop was planted (YYYY-MM-DD)
+# - polygon: Geographic coordinates (closed ring)
+#
+# Note: First and last point must be identical to close the polygon
+
+fields:
+  # Northern sector - early spring cereals
+  - id: F001
+    crop_type: wheat
+    planting_date: "2024-03-10"
+    polygon:
+      - [5.90, 49.85]
+      - [6.00, 49.85]
+      - [6.00, 49.95]
+      - [5.90, 49.95]
+      - [5.90, 49.85]
+  
+  - id: F002
+    crop_type: barley
+    planting_date: "2024-03-15"
+    polygon:
+      - [6.05, 49.85]
+      - [6.15, 49.85]
+      - [6.15, 49.95]
+      - [6.05, 49.95]
+      - [6.05, 49.85]
+  
+  # Central sector - oil crops and cereals
+  - id: F003
+    crop_type: rapeseed
+    planting_date: "2024-03-25"
+    polygon:
+      - [5.95, 49.70]
+      - [6.05, 49.70]
+      - [6.05, 49.80]
+      - [5.95, 49.80]
+      - [5.95, 49.70]
+  
+  - id: F004
+    crop_type: wheat
+    planting_date: "2024-03-20"
+    polygon:
+      - [6.10, 49.70]
+      - [6.20, 49.70]
+      - [6.20, 49.80]
+      - [6.10, 49.80]
+      - [6.10, 49.70]
+  
+  # Southern sector - late spring crops
+  - id: F005
+    crop_type: corn
+    planting_date: "2024-04-15"
+    polygon:
+      - [5.85, 49.55]
+      - [5.95, 49.55]
+      - [5.95, 49.65]
+      - [5.85, 49.65]
+      - [5.85, 49.55]
+  
+  - id: F006
+    crop_type: soy
+    planting_date: "2024-04-20"
+    polygon:
+      - [6.00, 49.55]
+      - [6.10, 49.55]
+      - [6.10, 49.65]
+      - [6.00, 49.65]
+      - [6.00, 49.55]
+  
+  # Eastern sector - diverse crops
+  - id: F007
+    crop_type: sunflower
+    planting_date: "2024-04-10"
+    polygon:
+      - [6.25, 49.75]
+      - [6.35, 49.75]
+      - [6.35, 49.85]
+      - [6.25, 49.85]
+      - [6.25, 49.75]
+  
+  - id: F008
+    crop_type: barley
+    planting_date: "2024-03-18"
+    polygon:
+      - [6.30, 49.60]
+      - [6.40, 49.60]
+      - [6.40, 49.70]
+      - [6.30, 49.70]
+      - [6.30, 49.60]
+
+# Scalability notes:
+# - This configuration shows 8 fields (medium farm size)
+# - The pipeline supports any number of fields (tested up to 1000+)
+# - To add more fields, simply append to the list above
+# - No code changes required for different field counts

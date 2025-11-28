@@ -1,0 +1,28 @@
+# Dagster core
+dagster==1.9.8
+dagster-webserver==1.9.8
+dagster-postgres==0.25.8
+
+protobuf==5.29.2
+
+
+# Storage - MinIO (S3-compatible object storage)
+minio==7.2.11
+
+# Data processing
+numpy==1.26.4
+pandas==2.2.3
+pyarrow==18.1.0
+
+# Geospatial data handling
+geojson==3.1.0
+shapely==2.0.6
+
+# HTTP requests for NASA POWER API
+requests==2.32.3
+
+# Configuration file parsing
+pyyaml==6.0.2
+
+# Dagster on Kubernetes
+dagster-k8s==1.9.8
