@@ -61,8 +61,7 @@ For Docker Desktop, enable Kubernetes in Settings > Kubernetes > Enable Kubernet
 ### 1. Clone and Build
 
 ```bash
-git clone <your-repo-url>
-cd dagster_project
+git clone https://github.com/FDiDio/daily-geoprocessing-pipeline.git
 
 # Build Docker image
 docker build -t agricultural-pipeline:latest .
